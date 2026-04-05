@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leisy's Office</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="navbar w100">
+      <div class="logo w100">>Leisy< Portfolio</div>
+      <ul class="menu w100">
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-container">
+      <h1 class="main-title">WELCOME TO MY SPOT</h1>
+      <p class="subtitle">Creative Web Full Stack & Security Developer</p>
+      <div class="scroll-down">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="section-proyectos" id="about">
+      <div class="about-content">
+        <h2>Acerca de mí / About me</h2>
+        <div class="grid">
+          <div id="canvas-proyectos"></div>
+          <div class="card-container">
+            <div class="bio-section es">
+              <span class="lang-tag">ES</span>
+              <p>
+                Soy profesional en desarrollo web y
+                <strong>ciberseguridad</strong>, apasionada por crear soluciones
+                tecnológicas seguras y eficientes.
+              </p>
+            </div>
+            <div class="divider"></div>
+            <div class="bio-section en">
+              <span class="lang-tag">EN</span>
+              <p>
+                I am a
+                <strong>web development and cybersecurity</strong> professional,
+                passionate about creating secure and efficient tech solutions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tech-skills">
+        <div class="tecnologies-content">
+          <h2>Habilidades / Skills</h2>
+          <div class="logos-wrapper">
+            <div class="logos-slide">
+              <img src="assets/docker.png" alt="Docker" />
+              <img src="assets/aws.png" alt="AWS" />
+              <img src="assets/python.png" alt="Python" />
+              <img src="assets/manychat.png" alt="ManyChat" />
+              <img src="assets/rust.png" alt="Rust" />
+              <img src="assets/mysql.png" alt="MySQL" />
+              <img src="assets/js.png" alt="JS" />
+              <img src="assets/ts.png" alt="TS" />
+              <img src="assets/react.png" alt="React" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="projects">
+        <div class="projects">
+          <div class="projects-content">
+            <h2>Proyectos / Projects</h2>
+            <div class="card-container" id="card-projects">
+              <div class="card">
+                <div class="carousel">
+                  <img
+                    class="carousel-item"
+                    src="assets/img_energyapp1.png"
+                    style="width: 100%"
+                  />
+                  <img
+                    class="carousel-item"
+                    src="assets/img_energyapp2.png"
+                    style="width: 100%"
+                  />
+                  <img
+                    class="carousel-item"
+                    src="assets/img_energyapp3.png"
+                    style="width: 100%"
+                  />
+                  <button class="prev" onclick="plusSlides(-1, 0)">❮</button>
+                  <button class="next" onclick="plusSlides(1, 0)">❯</button>
+                </div>
+                <div class="container">
+                  <h4>
+                    <b
+                      >EnergyApp: Optimización de consumo energético en PYMEs /
+                      Thesis / Energy Consumption Optimization in SMEs</b
+                    >
+                  </h4>
+                  <p>
+                    Desarrollé una solución tecnológica basada en IoT y análisis
+                    de datos para optimizar el consumo energético de PYMEs,
+                    aumentando eficiencia y reduciendo costos.
+                  </p>
+                  <p>
+                    I developed a tech solution using IoT and data analysis to
+                    optimize energy consumption in SMEs, improving efficiency
+                    and reducing costs.
+                  </p>
+                  <div class="skills-tags">
+                    <span class="tag">IoT</span>
+                    <span class="tag">Data Analysis</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">React</span>
+                    <span class="tag">FastAPI</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="carousel">
+                  <img
+                    class="carousel-item"
+                    src="assets/img_task_manager.png"
+                    style="width: 100%"
+                  />
+                  <img
+                    class="carousel-item"
+                    src="assets/img_task_manager2.png"
+                    style="width: 100%"
+                  />
+                  <img
+                    class="carousel-item"
+                    src="assets/img_task_manager3.png"
+                    style="width: 100%"
+                  />
+                  <button class="prev" onclick="plusSlides(-1, 1)">❮</button>
+                  <button class="next" onclick="plusSlides(1, 1)">❯</button>
+                </div>
+                <div class="container">
+                  <h4><b>Gestor de Tareas / Task Manager</b></h4>
+                  <p>
+                    Desarrollé un gestor de tareas interactivo, manejando
+                    estados, agregando y eliminando tareas, incluyendo la
+                    función de eliminar todas las tareas de forma segura.
+                  </p>
+                  <p>
+                    I developed an interactive task manager, handling states,
+                    adding and deleting tasks, including a feature to safely
+                    delete all tasks at once.
+                  </p>
+                  <div class="skills-tags">
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">HTML</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="carousel">
+                  <img
+                    class="carousel-item"
+                    src="assets/img_lab_counter.png"
+                    style="width: 100%"
+                  />
+                  <img
+                    class="carousel-item"
+                    src="assets/img_lab_counter2.png"
+                    style="width: 100%"
+                  />
+                  <img
+                    class="carousel-item"
+                    src="assets/img_lab_counter3.png"
+                    style="width: 100%"
+                  />
+                  <button class="prev" onclick="plusSlides(-1, 2)">❮</button>
+                  <button class="next" onclick="plusSlides(1, 2)">❯</button>
+                </div>
+                <div class="container">
+                  <h4><b>Contador Interactivo / Interactive Counter</b></h4>
+                  <p>
+                    Creé un contador que incrementa o decrementa según el botón
+                    presionado, con cambio de color al llegar a 10, demostrando
+                    manejo de estados y dinamismo en la interfaz.
+                  </p>
+                  <p>
+                    I built a counter that increments or decrements based on the
+                    button clicked, changing color when it reaches 10,
+                    showcasing state management and dynamic UI.
+                  </p>
+                  <div class="skills-tags">
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">UI/UX</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="carousel">
+                  <img
+                    class="carousel-item"
+                    src="assets/img_portfolio.png"
+                    style="width: 100%"
+                  />
+                  <img
+                    class="carousel-item"
+                    src="assets/img_portfolio2.png"
+                    style="width: 100%"
+                  />
+                  <button class="prev" onclick="plusSlides(-1, 3)">❮</button>
+                  <button class="next" onclick="plusSlides(1, 3)">❯</button>
+                </div>
+                <div class="container">
+                  <h4><b>Oficina de Leisy / Leisy's Office</b></h4>
+                  <p>
+                    Desarrollé un portafolio 3D donde presento mi información,
+                    CV y proyectos usando modelos GLB y animaciones
+                    interactivas, demostrando habilidades avanzadas en
+                    visualización web y UI/UX.
+                  </p>
+                  <p>
+                    I built an interactive 3D portfolio showcasing my info, CV,
+                    and projects using GLB models and interactive animations,
+                    demonstrating advanced web visualization and UI/UX skills.
+                  </p>
+                  <div class="skills-tags">
+                    <span class="tag">Three.js</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">UI/UX</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.160/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160/examples/jsm/"
+        }
+      }
+    </script>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
