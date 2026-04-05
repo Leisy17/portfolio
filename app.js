@@ -10,7 +10,7 @@ const characterContainer = document.getElementById('canvas-proyectos');
 const characterScene = new SceneManager(characterContainer);
 
 characterScene.scene.background = null; 
-characterScene.camera.position.set(0, 0, 5);
+characterScene.camera.position.set(-0.5, -0.5, 5);
 
 const ambient = new THREE.AmbientLight(0xffffff, 2); 
 characterScene.scene.add(ambient);
