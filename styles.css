@@ -240,20 +240,6 @@ canvas {
     animation-delay: -0.4s;
 }
 
-@keyframes scroll-anim {
-    0% {
-        opacity: 0;
-        transform: rotate(45deg) translate(-20px, -20px);
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-        transform: rotate(45deg) translate(20px, 20px);
-    }
-}
-
 #projects {
     width: 100%;
     max-width: 70%;
@@ -306,11 +292,15 @@ canvas {
   padding: 2px 16px;
 }
 
+.w80 {
+    width: 80%;
+    justify-content: right;
+}
+
 .skills-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    margin-top: 15px;
 }
 
 .tag {
@@ -426,4 +416,17 @@ img {
   padding: 10px;
   text-decoration: none;
   color: white;
+}
+
+#repo {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 10px 0px;
+    
+}
+
+.repo-section {
+    padding: 5px 0px;
+    width: 20%;
 }
