@@ -13,13 +13,11 @@ export function loadModel(path, scene, callback) {
         const model = gltf.scene;
         scene.add(model);
 
-        // Centrar (Esto está perfecto)
         const box = new THREE.Box3().setFromObject(model);
         const size = box.getSize(new THREE.Vector3());
         const center = box.getCenter(new THREE.Vector3());
         model.position.sub(center);
 
-        // 🔥 EL CAMBIO: Pasamos el objeto 'gltf' entero para tener las animaciones
         if (callback) callback(gltf, size);
     });
 }

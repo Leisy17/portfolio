@@ -46,7 +46,6 @@ export class SceneManager {
     }
 
     update(targetX, targetY) {
-        // Suavizado de cámara (Lerp)
         this.camera.position.x += (targetX - this.camera.position.x) * 0.05;
         this.camera.position.y += (targetY - this.camera.position.y) * 0.05;
 

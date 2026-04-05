@@ -1,13 +1,3 @@
-@media (max-width: 768px) {
-    .grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
 * {
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
@@ -15,23 +5,25 @@ html {
     box-sizing: border-box;
 }
 
-body { 
-    background-color: #000; 
-    overflow-x: hidden; /* Permite scroll vertical pero no horizontal */
+html {
+  scroll-behavior: smooth;
 }
 
-/* --- CAPA 0: EL 3D (FIJO AL FONDO) --- */
+body { 
+    background-color: #000; 
+    overflow-x: hidden;
+}
+
 canvas {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw; 
     height: 100vh; 
-    z-index: 1; /* Al fondo de todo */
+    z-index: 1;
     display: block; 
 }
 
-/* --- CAPA 1: EL MENÚ (FIJO ARRIBA) --- */
 .navbar {
     position: fixed;
     top: 0;
@@ -42,16 +34,15 @@ canvas {
     align-items: center;
     justify-content: space-between;
     padding: 0 50px;
-    z-index: 1000; /* Siempre encima de todo */
+    z-index: 1000;
     background-color: rgba(30, 30, 30, 0.7); 
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     color: white;
 }
 
-/* --- CAPA 2: EL HERO (TEXTO SOBRE EL 3D) --- */
 .hero-container {
-    position: fixed; /* Se queda quieto con el 3D */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -61,7 +52,7 @@ canvas {
     justify-content: center;
     align-items: center;
     z-index: 10;
-    pointer-events: none; /* No bloquea el mouse para el 3D */
+    pointer-events: none;
     color: white;
     text-align: center;
 }
@@ -82,11 +73,9 @@ canvas {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    
-    /* CAMBIOS AQUÍ */
     display: flex;
-    flex-direction: column; /* 🚩 Obliga a que los logos vayan DEBAJO de la bio */
-    justify-content: flex-start; /* Alinea al techo */
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center; 
     
     z-index: 20;
@@ -146,20 +135,6 @@ canvas {
     background: rgba(255,255,255,0.1);
 }
 
-@media (max-width: 600px) {
-    .card-container { flex-direction: column; }
-    .divider {
-        height: 1px;
-        width: 100%;
-        margin: 15px 0;
-    }
-}
-@media (max-width: 850px) {
-    .grid {
-        grid-template-columns: 1fr; /* Un elemento debajo del otro */
-    }
-}
-
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -174,7 +149,6 @@ canvas {
     margin: 20px;
 }
 
-/* --- ESTILOS DE APOYO --- */
 .menu {
     display: flex;
     list-style: none;
@@ -191,7 +165,6 @@ canvas {
     margin: 200px;
 }
 
-/* Contenedor que recorta lo que sobra */
 .tecnologies-content {
     width: 100%;
     overflow: hidden;
@@ -199,22 +172,20 @@ canvas {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(15px);
     padding: 40px 0;
-    align-items: center; /* Centra el wrapper verticalmente si el padre es más alto */
+    align-items: center;
     justify-content: center;
 }
 
-/* El wrapper NO tiene ancho fijo ni animaciones */
 .logos-wrapper {
     display: flex;
     width: max-content;
 }
 
-/* Cada bloque de logos */
 .logos-slide {
     object-fit: contain;
     align-items: center;
     display: flex;
-    flex-shrink: 0; /* Evita que los logos se aplasten */
+    flex-shrink: 0;
     justify-content: center;
     gap: 80px;
     padding-right: 80px;
@@ -234,7 +205,7 @@ canvas {
 
 .scroll-down {
     position: absolute;
-    bottom: 30px; /* Separación del suelo */
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -249,7 +220,7 @@ canvas {
     display: block;
     width: 50px;
     height: 50px;
-    border-bottom: 3px solid #00ff88; /* El verde de tu portafolio */
+    border-bottom: 3px solid #00ff88;
     border-right: 3px solid #00ff88;
     transform: rotate(45deg);
     margin: -10px;
@@ -259,10 +230,9 @@ canvas {
 .scroll-down.hidden {
     opacity: 0;
     visibility: hidden;
-    pointer-events: none; /* Para que no se pueda clickear si no se ve */
+    pointer-events: none;
 }
 
-/* Retraso para el efecto de cascada */
 .scroll-down span:nth-child(2) {
     animation-delay: -0.2s;
 }
@@ -325,7 +295,7 @@ canvas {
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  border-radius: 5px; /* 5px rounded corners */
+  border-radius: 5px;
 }
 
 .card:hover {
@@ -338,17 +308,17 @@ canvas {
 
 .skills-tags {
     display: flex;
-    flex-wrap: wrap; /* Para que se acomoden si no caben en una línea */
+    flex-wrap: wrap;
     gap: 12px;
     margin-top: 15px;
 }
 
 .tag {
-    background: rgba(0, 255, 136, 0.1); /* Fondo verde muy transparente */
-    color: #00ff88; /* El verde neón de tu tema */
+    background: rgba(0, 255, 136, 0.1);
+    color: #00ff88;
     border: 1px solid rgba(0, 255, 136, 0.3);
     padding: 8px 16px;
-    border-radius: 50px; /* Forma de cápsula */
+    border-radius: 50px;
     font-size: 0.9rem;
     font-weight: 500;
     transition: all 0.3s ease;
@@ -395,4 +365,65 @@ canvas {
 .card,
 img {
     border-radius: 24px;
+}
+
+.brdRadius {
+    border-radius: 24px;
+}
+
+
+#contact {
+    width: 100%;
+    max-width: 40%;
+}
+
+.contact {
+    margin-top: 20%;
+}
+
+
+.camara {
+  display: flex;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.048);
+}
+
+.fStyle {
+    font-style: italic;
+}
+
+.order {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.lado {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.76);
+}
+
+.centro {
+  width: 300px;
+  height: 300px;
+  margin: auto 0;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 10px solid #333;
+  box-shadow: 0 0 40px rgba(0,0,0,0.8);
+}
+
+.centro img {
+  width: 100%;
+  height: 125%;
+  object-fit: cover;
+  object-position: left center;
+}
+
+.fa {
+  padding: 10px;
+  text-decoration: none;
+  color: white;
 }

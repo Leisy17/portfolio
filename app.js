@@ -129,3 +129,8 @@ window.addEventListener('load', () => {
         showSlides(1, i);
     }
 });
+
+window.copyToClipboard = function(text) {
+  navigator.clipboard.writeText(text)
+    .then(() => alert('Copied to clipboard'));
+};
