@@ -255,15 +255,19 @@ canvas {
 
 .scroll-down {
     position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
     cursor: pointer;
-    z-index: 15;
+    z-index: 10;
     transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.scroll-down.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
 
 .scroll-down span {
@@ -277,10 +281,18 @@ canvas {
     animation: scroll-anim 2s infinite;
 }
 
-.scroll-down.hidden {
+@keyframes scroll-anim {
+  0% {
     opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+    transform: rotate(45deg) translate(0, 0);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translate(20px, 20px);
+  }
 }
 
 #projects {
