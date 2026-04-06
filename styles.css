@@ -456,7 +456,7 @@ img {
 }
 
 .centro {
-    max-height: 400px;
+    max-height: 300px;
     margin: auto 0;
     border-radius: 50%;
     overflow: hidden;
@@ -465,8 +465,20 @@ img {
 }
 
 @media (max-width: 768px) {
-    .lado, .centro {
-        width: 100%;
+    .lado {
+        width: 90%;
+    }
+    .centro {
+        width: 60%;
+        max-height: 300px;
+    }
+
+    .camara {
+        justify-content: center;
+    }
+
+    #contact {
+        max-width: 100%;
     }
 }
 
