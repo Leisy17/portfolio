@@ -102,20 +102,6 @@ window.addEventListener('scroll', () => {
     window.scrollY > 100 ? scrollArrow.classList.add('hidden') : scrollArrow.classList.remove('hidden');
 });
 
-// Carousel Automático
-const carousel = document.querySelector('.logos-wrapper');
-const items = document.querySelectorAll('.logos-slide');
-items.forEach(item => carousel.appendChild(item.cloneNode(true)));
-
-let x = 0;
-function animateLogos() {
-    x -= 1.5;
-    const itemWidth = items[0].offsetWidth;
-    if (Math.abs(x) >= itemWidth) x = 0;
-    carousel.style.transform = `translateX(${x}px)`;
-    requestAnimationFrame(animateLogos);
-}
-window.addEventListener('load', animateLogos);
 
 // Carousel Manual
 let slideIndex = [1, 1, 1, 1, 1];
