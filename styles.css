@@ -1,8 +1,8 @@
 * {
-    font-family: 'Courier New', Courier, monospace;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 html {
@@ -49,10 +49,10 @@ canvas {
     pointer-events: none;
     color: white;
     text-align: center;
+    font-size: 30px;
 }
 
 .main-title {
-    font-size: 4rem;
     letter-spacing: 8px;
     text-shadow: 0 0 20px rgba(0,0,0,0.8);
 }
@@ -71,10 +71,9 @@ canvas {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center; 
-    
     z-index: 20;
-    backdrop-filter: blur(10px);
-    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.3);
     padding: 100px 0;
     box-shadow: 0 -10px 100px rgba(0,0,0,0.8);
 }
@@ -85,8 +84,9 @@ canvas {
     max-width: 70%;
     width: 100%;
     text-align: center;
-    background-color: #a5a5a597;
+    background-color: #f3f0f0c5;
     border-radius: 24px;
+    box-shadow: 1px 1px 10px 1px #5c5c5c;
 }
 
 .about-content h2 {
@@ -94,6 +94,7 @@ canvas {
     text-align: center;
     width: 100%;
     color: #000;
+    font-size: 25px;
 }
 
 .about {
@@ -105,22 +106,15 @@ canvas {
     width: calc(50% - 10px);
 }
 
-
-
 .styles-card {
     border: 1px solid white;
-    border-width: 4px 1px 1px 4px;
-    border-color: #00ff88 white white #00ff88;
+    border-width: 4px;
+    border-color: #43ca8b;
     border-radius: 24px;
     color: #000;
 }
 
 #card-container-about {
-    border: 1px solid white;
-    border-width: 4px 1px 1px 4px;
-    border-color: #00ff88 white white #00ff88;
-    border-radius: 24px;
-    color: #000;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -143,6 +137,8 @@ canvas {
     align-items: center;
     place-items: center;
     padding: 10px;
+    gap: 10px;
+    font-size: 16px;
 }
 
 @media (max-width: 768px) {
@@ -168,8 +164,8 @@ canvas {
 
 
 .lang-tag {
-    background: #00ff88;
-    color: #000;
+    background: #46745e;
+    color: #fff;
     font-weight: bold;
 }
 
@@ -195,8 +191,19 @@ canvas {
 .menu a, .logo {
     color: white;
     text-decoration: none;
-    font-size: 18px;
     font-weight: bold;
+}
+
+.menu li {
+    padding: 10px;
+}
+
+.menu li:hover {
+    background: #a3a3a3;
+}
+
+.menu li:hover a {
+    color: #000;
 }
 
 @media (max-width: 768px) {
@@ -213,43 +220,64 @@ canvas {
 .tech-skills {
     width: 100%;
     margin: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tech-skills h2 {
+    font-size: 25px;
 }
 
 .tecnologies-content {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.329);
     backdrop-filter: blur(15px);
-    padding: 40px 0;
-    align-items: center;
-    justify-content: center;
-}
-
-.logos-wrapper {
+    padding: 40px 0px;
     display: flex;
-    width: max-content;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    border-radius: 24px;
+    box-shadow: 1px 1px 10px 1px #5c5c5c;
 }
 
 .logos-slide {
-    object-fit: contain;
     align-items: center;
     display: flex;
-    flex-shrink: 0;
     justify-content: center;
-    gap: 80px;
-    padding-right: 80px;
+    gap: 20px;
+    width: 100%;
+    flex-wrap: wrap
+}
+
+.column-img {
+    width: calc(33.33% - 20px);
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap
+}
+
+@media (max-width: 768px) {
+
+    .column-img  {
+        width: calc(50% - 20px);
+    }
+    .logos-slide {
+        width: 60%;
+    }
+    .tecnologies-content {
+        max-width: 100%;
+    }
 }
 
 .logos-slide img {
     height: 70px;
-    width: auto;
 }
 
 .tecnologies-content h2 {
     text-align: center;
     width: 100%;
-    color: #ffffff;
+    color: #000000;
     padding-bottom: 24px;
 }
 
@@ -320,6 +348,7 @@ canvas {
     padding: 40px 0;
     align-items: center;
     justify-content: center;
+    box-shadow: 1px 1px 10px 1px #5c5c5c;
 }
 
 .projects-content h2 {
@@ -327,6 +356,7 @@ canvas {
     width: 100%;
     color: #000000;
     padding-bottom: 24px;
+    font-size: 25px;
 }
 
 #card-projects {
@@ -339,7 +369,7 @@ canvas {
 }
 
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 1px 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   border-radius: 5px;
   width: calc(50% - 10px);
@@ -356,7 +386,17 @@ canvas {
 }
 
 .container {
-  padding: 2px 16px;
+    padding: 2px 16px;
+    gap: 10px;
+    display: grid;
+}
+
+.container h4 {
+    font-size: 16px;
+}
+
+.container p {
+    font-size: 14px;
 }
 
 .w80 {
@@ -371,47 +411,47 @@ canvas {
 }
 
 .tag {
-    background: rgba(0, 255, 136, 0.1);
-    color: #00ff88;
+    background: rgba(46, 92, 71, 0.856);
+    color: #ffffff;
     border: 1px solid rgba(0, 255, 136, 0.3);
     padding: 8px 16px;
     border-radius: 50px;
-    font-size: 0.9rem;
     font-weight: 500;
     transition: all 0.3s ease;
     cursor: default;
     white-space: nowrap;
+    font-size: 12px;
 }
 
 .tag:hover {
     background: rgba(0, 255, 136, 0.2);
-    border-color: #00ff88;
+    border-color: #43ca8b;
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 255, 136, 0.2);
+    color: #000000;
 }
 
 .carousel {
-  position: relative;
-  max-width: 100%;
-  margin-bottom: 15px;
+    position: relative;
+    max-width: 100%;
+    margin-bottom: 15px;
 }
 
 .carousel-item {
-  display: none;
+    display: none;
 }
 
 .prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  padding: 8px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  border: none;
-  background-color: rgba(0,0,0,0.5);
-  user-select: none;
-  transform: translateY(-50%);
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 8px;
+    color: white;
+    font-weight: bold;
+    border: none;
+    background-color: rgba(0,0,0,0.5);
+    user-select: none;
+    transform: translateY(-50%);
 }
 
 .prev { left: 0; }
@@ -422,6 +462,15 @@ canvas {
 .card,
 img {
     border-radius: 24px;
+}
+
+img {
+    box-shadow: 1px 1px 10px 1px #afafaf;
+    transition: transform 0.3s ease-out;
+}
+
+img:hover {
+    transform: translateY(-5px);
 }
 
 .brdRadius {
@@ -446,10 +495,6 @@ img {
   background: rgba(255, 255, 255, 0.048);
 }
 
-.fStyle {
-    font-style: italic;
-}
-
 .order {
     display: flex;
     flex-direction: column;
@@ -465,6 +510,16 @@ img {
 .lado {
   background: rgba(255, 255, 255, 0.76);
   padding: 20px;
+  box-shadow: 1px 1px 10px 1px #5c5c5c;
+}
+
+.lado p {
+    font-size: 14px;
+}
+
+.lado h4 {
+    text-align: center;
+    font-size: 18px;
 }
 
 .centro {
@@ -476,12 +531,16 @@ img {
     box-shadow: 0 0 40px rgba(0,0,0,0.8);
 }
 
-@media (max-width: 768px) {
+.centro img {
+    transform: translateY(0px);;
+}
+
+@media (max-width: 810px) {
     .lado {
-        width: 90%;
+        width: 70%;
     }
     .centro {
-        width: 60%;
+        width: 50%;
         max-height: 400px;
     }
 
