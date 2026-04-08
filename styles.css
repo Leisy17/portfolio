@@ -170,8 +170,8 @@ canvas {
 }
 
 .divider {
-    width: 80%;
-    background: rgba(255,255,255,0.1);
+    width: 40%;
+    background: rgba(177, 176, 176, 0.671);
     height: 2px;
 }
 
@@ -533,6 +533,25 @@ img:hover {
 
 .centro img {
     transform: translateY(0px);;
+}
+
+@media (min-width: 810px) and (max-width: 1300px) {
+    .lado {
+        width: 30%;
+    }
+    .centro {
+        width: 30%;
+        max-height: 250px;
+    }
+
+    .camara {
+        justify-content: center;
+        background: none;
+    }
+
+    #contact {
+        max-width: 80%;
+    }
 }
 
 @media (max-width: 810px) {
