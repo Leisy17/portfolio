@@ -131,3 +131,42 @@ window.addEventListener("load", () => {
 window.copyToClipboard = function (text) {
   navigator.clipboard.writeText(text).then(() => alert("Copied to clipboard"));
 };
+
+const logoDivs = document.querySelectorAll(".logo");
+const logoTextDiv = document.querySelector(".logo-text");
+const text = `
+  <div>
+          <p
+            style="p
+              font-family: Verdana, sans-serif;
+              text-shadow:
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+            "
+          >
+            Leisy Sánchez
+          </p>
+        </div> 
+`;
+const logo = `
+<div class="circle-logo">
+          <div class="logo-top">
+            <p id="logo-triangle">V</p>
+          </div>
+          <div class="logo-body">
+            <p id="logo-brackets">{</p>
+            <p id="logo-letter">LS</p>
+            <p id="logo-brackets">}</p>
+            <div class="logo-bottom">
+              <p id="logo-triangle">Ʌ</p>
+            </div>
+          </div>
+        </div>
+        
+`;
+logoDivs.forEach((div) => {
+  div.innerHTML += logo;
+});
+logoTextDiv.innerHTML += text;
