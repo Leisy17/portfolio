@@ -44,6 +44,7 @@ initInteractions();
 // Carga de modelos
 loadModel("./models/scene.gltf", officeScene.scene, (model, size) => {
   officeScene.camera.position.set(0, -0.5, -size.z / 2 + 1);
+  checkLoading();
 });
 
 loadModel("./models/about.glb", characterScene.scene, (gltf) => {
@@ -54,7 +55,7 @@ loadModel("./models/about.glb", characterScene.scene, (gltf) => {
   character.position.z = 0;
 
   characterScene.camera.lookAt(0, 0.5, 0);
-
+  checkLoading();
   if (gltf.animations && gltf.animations.length > 0) {
     mixer = new THREE.AnimationMixer(character);
     mixer.clipAction(gltf.animations[0]).play();
@@ -170,3 +171,14 @@ logoDivs.forEach((div) => {
   div.innerHTML += logo;
 });
 logoTextDiv.innerHTML += text;
+
+let modelsToLoad = 2; 
+
+function checkLoading() {
+  modelsToLoad--;
+  if (modelsToLoad === 0) {
+    const overlay = document.getElementById("loading-overlay");
+    overlay.classList.add("hidden");
+    setTimeout(() => overlay.remove(), 500);
+  }
+}
