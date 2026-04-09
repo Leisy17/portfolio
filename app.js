@@ -172,7 +172,7 @@ logoDivs.forEach((div) => {
 });
 logoTextDiv.innerHTML += text;
 
-let modelsToLoad = 2; 
+let modelsToLoad = 2;
 
 function checkLoading() {
   modelsToLoad--;
