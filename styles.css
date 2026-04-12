@@ -686,7 +686,7 @@ img:hover {
 
 .footer {
   padding-top: 300px;
-  display: grid;
+  display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -699,7 +699,7 @@ img:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 100vw;
+  width: 100%;
   gap: 20px;
 }
 
