@@ -23,7 +23,7 @@ canvas {
   top: 0;
   left: 0;
   width: 100%;
-  height: 60px;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -84,7 +84,6 @@ canvas {
   width: 100%;
   text-align: center;
   background-color: #f3f0f094;
-  border-radius: 24px;
   box-shadow: 1px 1px 10px 1px #5c5c5c;
 }
 
@@ -109,7 +108,6 @@ canvas {
   border: 1px solid white;
   border-width: 4px;
   border-color: #43ca8b;
-  border-radius: 24px;
   color: #000;
 }
 
@@ -186,7 +184,7 @@ canvas {
   align-items: center;
   flex-direction: row;
   gap: 5px;
-  height: auto;
+  padding: 10px 0px;
 }
 
 .circle-logo {
@@ -302,7 +300,6 @@ canvas {
   flex-direction: column;
   align-items: center;
   max-width: 100%;
-  border-radius: 24px;
   box-shadow: 1px 1px 10px 1px #5c5c5c;
 }
 
@@ -405,7 +402,6 @@ canvas {
 }
 
 .projects-content {
-  border-radius: 24px;
   overflow: hidden;
   position: relative;
   background: #f3f0f094;
@@ -425,7 +421,6 @@ canvas {
 }
 
 #card-projects {
-  border-radius: 24px;
   padding: 10px;
 }
 
