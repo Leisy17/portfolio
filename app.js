@@ -182,3 +182,49 @@ function checkLoading() {
     setTimeout(() => overlay.remove(), 500);
   }
 }
+
+function menuOptions(li) {
+
+  const menuOptions = {
+    "Home": "#",
+    "About": "#about",
+    "Projects": "#projects",
+    "Contact": "#contact"
+  }
+
+  let menuHtml = "";
+
+  for (const key in menuOptions) {
+    if (!li) {
+      menuHtml += `<a href="${menuOptions[key]}">${key}</a>`;
+      continue
+    }
+    menuHtml += `<li class="brdRadius"><a class="brdRadius" href="${menuOptions[key]}">${key}</a></li>`;
+  }
+
+  return menuHtml;
+}
+
+const menu = document.querySelector(".menu");
+const menuResponsive = document.querySelector(".dropdown-content");
+menu.innerHTML += menuOptions(true);
+menuResponsive.innerHTML += menuOptions(false);
+
+const button = document.querySelector('.dropbtn');
+
+button.addEventListener('click', (e) => {
+  e.stopPropagation();
+
+  if (menuResponsive.style.display === "block") {
+    menuResponsive.style.display = "none";
+    button.style.background = "transparent";
+  } else {
+    menuResponsive.style.display = "block";
+    button.style.background = "rgba(0, 255, 136, 0.3)";
+  }
+});
+
+document.addEventListener('click', () => {
+  menuResponsive.style.display = "none";
+  button.style.background = "transparent";
+});
