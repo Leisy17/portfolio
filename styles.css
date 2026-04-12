@@ -587,12 +587,12 @@ img:hover {
 }
 
 .lado a {
-  transition: transform 0.3s ease-out;
+  transition: transform 0.3s;
   border-radius: 8px;
 }
 
 .lado a:hover {
-  transform: translateY(-5px);
+  transform: scale(1.2);
 }
 
 .centro {
@@ -671,12 +671,12 @@ img:hover {
 }
 
 .repo-section a {
-  transition: transform 0.3s ease-out;
+  transition: transform 0.3s;
   border-radius: 8px;
 }
 
 .repo-section a:hover {
-  transform: translateY(-5px);
+  transform: scale(1.2);
 }
 
 .footer {
