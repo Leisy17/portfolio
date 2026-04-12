@@ -254,12 +254,22 @@ canvas {
   font-weight: bold;
 }
 
-.menu li:hover {
-  background: #a3a3a3;
+@media (hover: hover) {
+  .menu li:hover {
+    background: #a3a3a3;
+  }
+  .menu li:hover a {
+    color: #000;
+  }
 }
 
-.menu li:hover a {
-  color: #000;
+@media (hover: none) {
+  .menu li:active {
+    background: #a3a3a3;
+  }
+  .menu li:active a {
+    color: #000;
+  }
 }
 
 .menu li a {
