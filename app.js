@@ -267,6 +267,36 @@ function initNavigation() {
       this.classList.add("active");
     });
   });
+  /* Tomado de Gemini */ 
+  const selector = Array.from(navLinks)
+    .map(link => link.getAttribute("href"))
+    .filter(href => href && href.startsWith("#"))
+    .join(", ");
+
+  if (!selector) return;
+
+  const sections = document.querySelectorAll(selector);
+  const observerOptions = {
+    root: null,
+    rootMargin: "-25% 0px -55% 0px",
+    threshold: 0
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute("id");
+        navLinks.forEach((link) => {
+          if (link.getAttribute("href") === `#${id}`) {
+            navLinks.forEach((l) => l.classList.remove("active"));
+            link.classList.add("active");
+          }
+        });
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach((section) => observer.observe(section));
 }
 
 window.toggleBtn = toggleBtn;
