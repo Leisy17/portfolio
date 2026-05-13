@@ -297,6 +297,18 @@ function initNavigation() {
   }, observerOptions);
 
   sections.forEach((section) => observer.observe(section));
+
+  window.addEventListener('scroll', () => {
+    const atBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 10;
+    if (atBottom) {
+      navLinks.forEach(l => {
+        l.classList.remove('active');
+        if (l.parentElement) l.parentElement.classList.remove('active');
+      });
+      const lastLink = navLinks[navLinks.length - 1];
+      if (lastLink) lastLink.classList.add('active');
+    }
+  }, { passive: true });
 }
 
 window.toggleBtn = toggleBtn;
