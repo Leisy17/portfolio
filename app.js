@@ -1,5 +1,26 @@
 import * as data from "./language.json" with { type: "json" };
 
+function renderNavbar(lang) {
+  const container = document.getElementById("navbar-links-container");
+  if (!container) return;
+
+  const navItems = data.default[lang]["nav"];
+
+  const navHTML = navItems
+    .map((item, index) => {
+      const activeClass = index === 0 ? "active" : "";
+      return `
+            <li class="nav-item">
+                <a class="nav-link" href="${item.href}">${item.text}</a>
+            </li>
+        `;
+    })
+    .join("");
+
+  container.innerHTML = navHTML;
+  initNavigation();
+}
+
 const skills = [
   { name: "Python", icon: "bi bi-code-slash" },
   { name: "FastAPI", icon: "bi bi-lightning-charge" },
@@ -207,6 +228,7 @@ function renderFooterLinks() {
 }
 
 function renderTextByLang(lang) {
+  renderNavbar(lang);
   let brand = document.getElementById("brand");
   brand.innerText = data.default[lang]["brand"];
   let resume = document.getElementById("resume");
