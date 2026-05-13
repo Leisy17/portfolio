@@ -41,7 +41,7 @@ function renderSkills() {
     <div class="card text-center shadow-sm border-0 w-100 py-2 custom-card-skill">
         <div class="card-body d-flex flex-column align-items-center justify-content-center p-1">
             <i class="${skill.icon} text-warning mb-1" style="font-size: 1.8rem;"></i>
-            <h5 class="card-title m-0"">
+            <h5 class="card-title m-0">
                 ${skill.name.toUpperCase()}
             </h5>
         </div>
@@ -182,10 +182,10 @@ function renderContactLinks() {
                     </div>
                     
                     <div class="d-flex flex-column text-start">
-                        <span class="text-muted font-weight-normal text-uppercase mb-1">
+                        <span class="text-muted text-uppercase mb-1">
                             ${link.label}
                         </span>
-                        <span class="text-dark font-weight-light">
+                        <span id="link-value" class="text-warning font-weight-light">
                             ${link.value}
                         </span>
                     </div>
