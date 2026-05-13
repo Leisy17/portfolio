@@ -79,6 +79,11 @@ nav {
   border-color: inherit !important;
 }
 
+.lang {
+  padding: 0.1rem !important;
+  font-size: 0.85rem;
+}
+
 .card-title,
 .text-warning {
   color: var(--primary) !important;
