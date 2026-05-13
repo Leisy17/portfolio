@@ -40,7 +40,7 @@ function renderSkills() {
         <div class="col-4 col-sm-3 col-md-2 p-1 d-flex justify-content-center">
     <div class="card text-center shadow-sm border-0 w-100 py-2 custom-card-skill">
         <div class="card-body d-flex flex-column align-items-center justify-content-center p-1">
-            <i class="${skill.icon} text-warning mb-1" style="font-size: 1.8rem;"></i>
+            <i class="${skill.icon} text-warning mb-1" style="font-size: 1.8rem; -webkit-text-stroke: 0.03em;"></i>
             <h5 class="card-title m-0">
                 ${skill.name.toUpperCase()}
             </h5>
@@ -107,7 +107,7 @@ function renderProjects(lang) {
 
       return `
             <div class="col-12 col-sm-6 col-md-4 p-2 d-flex justify-content-center">
-                <div class="card border-0 custom-card-project bg-white w-100">
+                <div class="card border-1 custom-card-project bg-white w-100">
                     
                     <div class="project-img-container d-flex justify-content-center align-items-center">
                         <img src="${project.image}" class="img-fluid rounded-sm" alt="${project.title}">
@@ -126,11 +126,12 @@ function renderProjects(lang) {
                             ${project.description[lang]}
                         </p>
                         
-                        <div class="mt-auto pt-2">
-                            <a href="${project.githubUrl}" target="_blank" 
-                               class="btn p-0 text-warning text-uppercase font-weight-normal d-inline-flex align-items-center custom-btn-link" >
-                                ${btnText} <i class="bi bi-arrow-right ml-2"></i>
-                            </a>
+                        <div class="mt-auto pt-3">
+                          <a href="${project.githubUrl}" target="_blank" 
+                            class="btn btn-outline-primary text-uppercase d-inline-flex align-items-center custom-btn-link">
+                              <span class="text-warning mr-2">${btnText}</span>
+                              <i class="bi bi-arrow-right text-warning"></i>
+                          </a>
                         </div>
                     </div>
                 </div>
@@ -267,10 +268,10 @@ function initNavigation() {
       this.classList.add("active");
     });
   });
-  /* Tomado de Gemini */ 
+  /* Tomado de Gemini */
   const selector = Array.from(navLinks)
-    .map(link => link.getAttribute("href"))
-    .filter(href => href && href.startsWith("#"))
+    .map((link) => link.getAttribute("href"))
+    .filter((href) => href && href.startsWith("#"))
     .join(", ");
 
   if (!selector) return;
@@ -279,7 +280,7 @@ function initNavigation() {
   const observerOptions = {
     root: null,
     rootMargin: "-25% 0px -55% 0px",
-    threshold: 0
+    threshold: 0,
   };
 
   const observer = new IntersectionObserver((entries) => {
@@ -298,17 +299,23 @@ function initNavigation() {
 
   sections.forEach((section) => observer.observe(section));
 
-  window.addEventListener('scroll', () => {
-    const atBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 10;
-    if (atBottom) {
-      navLinks.forEach(l => {
-        l.classList.remove('active');
-        if (l.parentElement) l.parentElement.classList.remove('active');
-      });
-      const lastLink = navLinks[navLinks.length - 1];
-      if (lastLink) lastLink.classList.add('active');
-    }
-  }, { passive: true });
+  window.addEventListener(
+    "scroll",
+    () => {
+      const atBottom =
+        window.scrollY + window.innerHeight >=
+        document.documentElement.scrollHeight - 10;
+      if (atBottom) {
+        navLinks.forEach((l) => {
+          l.classList.remove("active");
+          if (l.parentElement) l.parentElement.classList.remove("active");
+        });
+        const lastLink = navLinks[navLinks.length - 1];
+        if (lastLink) lastLink.classList.add("active");
+      }
+    },
+    { passive: true },
+  );
 }
 
 window.toggleBtn = toggleBtn;
