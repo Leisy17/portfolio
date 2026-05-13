@@ -1,0 +1,20 @@
+{
+    "en": {
+        "brand": "LEISY PORTFOLIO",
+        "resume": "Full-Stack Developer & Cybersecurity expert integrating AI technologies to streamline secure software lifecycles. Focused on delivering robust digital solutions by combining AI-assisted development with advanced data protection strategies.",
+        "stack": "My Stack",
+        "viewGitHub": "VIEW ON GITHUB",
+        "projects": "Featured Projects",
+        "quota": "In my journey as a developer, I have learned to turn challenged into solutions, aiming to build secure, efficient, and impactful technology.",
+        "connect": "Let's Connect"
+    },
+    "es": {
+        "brand": "PORTAFOLIO DE LEISY",
+        "resume": "Desarrolladora Full-Stack y experta en Ciberseguridad enfocado en la integración de tecnologías de IA para optimizar el ciclo de vida del software seguro. Especializado en ofrecer soluciones digitales robustas mediante la combinación de desarrollo asistido por IA y estrategias avanzadas de protección de datos.",
+        "stack": "Mi Stack Tecnológico",
+        "viewGitHub": "VER EN GITHUB",
+        "projects": "Proyectos Destacados",
+        "quota": "En mi camino como dev, he aprendido a convertir retos en soluciones, con el objetivo de crear tecnología segura y eficiente.",
+        "connect": "Construyamos algo juntos"
+    }
+}

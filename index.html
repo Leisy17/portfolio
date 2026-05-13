@@ -1,386 +1,199 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Leisy's Office</title>
+    <title>Portolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
+
   <body>
-    <div id="loading-overlay">
-      <span class="loader"></span>
-    </div>
-    <nav class="navbar w100">
-      <div class="logo logo-text w100"></div>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+      <div class="container custom-width-container d-flex align-items-center">
+        <a class="navbar-brand" href="#" style="letter-spacing: 0.15em" id="brand"
+          >LEISY PORTFOLIO</a
+        >
+
+        <div
+          class="btn-group order-1 order-lg-last ml-auto ml-lg-3"
+          role="group"
+        >
+          <button
+            type="button"
+            class="btn btn-outline-warning active"
+            onclick="toggleBtn(this)"
+            value="en"
+          >
+            EN
+          </button>
+          <span class="btn border-0 disabled text-dark px-1">/</span>
+          <button
+            type="button"
+            class="btn btn-outline-warning"
+            onclick="toggleBtn(this)"
+            value="es"
+          >
+            ES
+          </button>
+        </div>
+
+        <button
+          class="navbar-toggler order-2 ml-2"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarText"
+          aria-controls="navbarText"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse order-3 order-lg-2"
+          id="navbarText"
+        >
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#overview">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skills">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
         </div>
       </div>
-      <ul class="menu w100">
-      </ul>
-      <ul class="menu-responsive w100">
-        <div class="dropdown">
-  <button class="dropbtn">
-    <i class="fa fa-bars"></i>
-  </button>
-
-  <div class="dropdown-content"></div>
-</div>
-      </ul>
     </nav>
-    <div>
-      <canvas id="office-canvas"></canvas>
-    </div>
-    <div class="hero-container">
-      <h1 class="main-title">WELCOME TO MY SPOT</h1>
-      <p class="subtitle">Creative Web Full Stack & Security Developer</p>
-      <div class="scroll-down">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-
-    <div class="spacer"></div>
-
-    <div class="section-proyectos" id="about">
-      <div class="about-content brdRadius">
-        <h2>Acerca de mí / About me</h2>
-        <div class="about">
-          <div class="about-column">
-            <div
-              id="canvas-proyectos"
-              style="position: relative; width: 100%; height: 400px"
-            ></div>
+    <section class="overview d-flex justify-content-center align-items-center" id="overview">
+      <div class="container text-center w-100">
+        <div class="row w-100 justify-content-center align-items-center">
+          <div
+            class="col-12 col-md-5 d-flex flex-column text-center text-md-left mb-4 mb-md-0"
+          >
+            <h1 class="title mb-5">Leisy Sánchez</h1>
+            <p class="resume" id="resume">
+              Full-Stack Developer & Cybersecurity expert integrating AI
+              technologies to streamline secure software lifecycles. Focused on
+              delivering robust digital solutions by combining AI-assisted
+              development with advanced data protection strategies.
+            </p>
           </div>
-          <div class="about-column styles-card" id="card-container-about">
-            <div class="bio-section es">
-              <span class="lang-tag">ES</span>
-              <p>
-                Hola! Mi nombre es Leisy. Soy profesional en desarrollo web y
-                <strong>ciberseguridad</strong>, apasionada por crear soluciones
-                tecnológicas seguras y eficientes.
-              </p>
-            </div>
-            <div class="divider"></div>
-            <div class="bio-section en">
-              <span class="lang-tag">EN</span>
-              <p>
-                Hi! My name is Leisy. I am a
-                <strong>web development and cybersecurity</strong> professional,
-                passionate about creating secure and efficient tech solutions.
-              </p>
-            </div>
+
+          <div
+            class="col-12 col-md-6 d-flex justify-content-center align-items-center"
+          >
+            <figure
+              class="figure text-center m-0"
+              style="max-width: 320px; width: 100%"
+            >
+              <img
+                src="assets/me.jpeg"
+                class="figure-img img-fluid rounded"
+                alt="me"
+                style="width: 100%; height: auto"
+              />
+            </figure>
           </div>
         </div>
       </div>
-      <div class="tech-skills">
-        <div class="tecnologies-content brdRadius">
-          <h2>Habilidades / Skills</h2>
-          <div class="logos-slide">
-            <div class="column-img">
-              <img src="assets/docker.png" alt="Docker" />
-            </div>
-            <div class="column-img">
-              <img src="assets/aws.png" alt="AWS" />
-            </div>
-            <div class="column-img">
-              <img src="assets/python.png" alt="Python" />
-            </div>
-            <div class="column-img">
-              <img src="assets/manychat.png" alt="ManyChat" />
-            </div>
-            <div class="column-img">
-              <img src="assets/rust.png" alt="Rust" />
-            </div>
-            <div class="column-img">
-              <img src="assets/mysql.png" alt="MySQL" />
-            </div>
-            <div class="column-img">
-              <img src="assets/js.jpg" alt="JS" />
-            </div>
-            <div class="column-img">
-              <img src="assets/ts.png" alt="TS" />
-            </div>
-            <div class="column-img">
-              <img src="assets/react.webp" alt="React" />
-            </div>
+    </section>
+    <section
+      class="skills d-flex justify-content-center align-items-center mb-5"
+      id="skills"
+    >
+      <div class="container text-center w-100">
+        <div
+          class="skills-subtitle d-flex justify-content-center flex-column align-items-center mb-5"
+        >
+          <h2 class="subtitle mt-5" id="stack">My Stack</h2>
+          <div class="divider"></div>
+        </div>
+        <div
+          id="skills-container"
+          class="row w-100 justify-content-center align-items-center"
+        ></div>
+      </div>
+    </section>
+    <section class="mt-3 overview w-100" id="projects">
+      <div class="container-fluid p-5 w-75">
+        <h1
+          class="title mb-4 font-weight-normal text-warning"
+          id="projects-title"
+        >
+          Featured Projects
+        </h1>
+
+        <div class="row w-100 mx-0" id="projects-container"></div>
+      </div>
+    </section>
+    <section class="blockquota w-100 p-5" id="blockquota">
+      <i class="bi bi-quote quote-icon text-warning mt-3"></i>
+      <h1 class="subtitle mb-4 text-warning" id="quota">
+        In my journey as a developer, I have learned to turn challenged into
+        solutions, aiming to build secure, efficient, and impactful technology.
+      </h1>
+      <div class="divider"></div>
+    </section>
+    <section class="blockquota w-100 p-5 justify-content-center" id="contact">
+      <h1 class="title mb-4 text-warning text-center" id="connect">Let's Connect</h1>
+      <div class="w-75" id="contact-container"></div>
+    </section>
+    <footer class="footer py-4 bg-white" style="border-top: 1px solid #f1f1f1">
+      <div class="container-fluid px-4 px-md-5">
+        <div
+          class="d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-left"
+        >
+          <div class="mb-3 mb-md-0">
+            <h2
+              class="footer-logo m-0 font-weight-normal text-uppercase"
+              style="letter-spacing: 0.05em; font-size: 1.5rem; color: #705c49"
+            >
+              Leisy
+            </h2>
           </div>
-        </div>
-      </div>
-      <div id="projects">
-        <div class="projects">
-          <div class="projects-content brdRadius">
-            <h2>Proyectos / Projects</h2>
-            <div class="card-container styles-card brdRadius" id="card-projects">
-              <div class="card">
-                <div class="carousel">
-                  <img
-                    class="carousel-item"
-                    src="assets/img_energyapp2.png"
-                    style="width: 100%"
-                  />
-                  <img
-                    class="carousel-item"
-                    src="assets/img_energyapp3.png"
-                    style="width: 100%"
-                  />
-                  <button class="prev" onclick="plusSlides(-1, 0)">❮</button>
-                  <button class="next" onclick="plusSlides(1, 0)">❯</button>
-                </div>
-                <div class="container">
-                  <h4>
-                    <b
-                      >EnergyApp: Optimización de consumo energético en PYMEs /
-                      Thesis / Energy Consumption Optimization in SMEs</b
-                    >
-                  </h4>
-                  <p>
-                    Desarrollé una solución tecnológica basada en IoT y análisis
-                    de datos para optimizar el consumo energético de PYMEs,
-                    aumentando eficiencia y reduciendo costos.
-                  </p>
-                  <p>
-                    I developed a tech solution using IoT and data analysis to
-                    optimize energy consumption in SMEs, improving efficiency
-                    and reducing costs.
-                  </p>
-                  <div
-                    class="skills-tags"
-                    style="padding: 20px 0px; justify-content: center"
-                  >
-                    <span class="tag">IoT</span>
-                    <span class="tag">Data Analysis</span>
-                    <span class="tag">Python</span>
-                    <span class="tag">MySQL</span>
-                    <span class="tag">React</span>
-                    <span class="tag">FastAPI</span>
-                  </div>
-                </div>
-              </div>
 
-              <div class="card">
-                <div class="carousel">
-                  <img
-                    class="carousel-item"
-                    src="assets/img_task_manager.png"
-                    style="width: 100%"
-                  />
-                  <img
-                    class="carousel-item"
-                    src="assets/img_task_manager2.png"
-                    style="width: 100%"
-                  />
-                  <img
-                    class="carousel-item"
-                    src="assets/img_task_manager3.png"
-                    style="width: 100%"
-                  />
-                  <button class="prev" onclick="plusSlides(-1, 1)">❮</button>
-                  <button class="next" onclick="plusSlides(1, 1)">❯</button>
-                </div>
-                <div class="container">
-                  <h4><b>Gestor de Tareas / Task Manager</b></h4>
-                  <p>
-                    Desarrollé un gestor de tareas interactivo, manejando
-                    estados, agregando y eliminando tareas, incluyendo la
-                    función de eliminar todas las tareas de forma segura.
-                  </p>
-                  <p>
-                    I developed an interactive task manager, handling states,
-                    adding and deleting tasks, including a feature to safely
-                    delete all tasks at once.
-                  </p>
-                  <div id="repo">
-                    <div class="repo-section">
-                      <a
-                        href="https://github.com/Leisy17/task--manager-leisy"
-                        target="_blank"
-                        class="fa fa-github fa-lg"
-                        style="background-color: #000"
-                      ></a>
-                    </div>
-                    <div class="skills-tags w80">
-                      <span class="tag">JavaScript</span>
-                      <span class="tag">CSS</span>
-                      <span class="tag">HTML</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="carousel">
-                  <img
-                    class="carousel-item"
-                    src="assets/img_lab_counter.png"
-                    style="width: 100%"
-                  />
-                  <img
-                    class="carousel-item"
-                    src="assets/img_lab_counter2.png"
-                    style="width: 100%"
-                  />
-                  <img
-                    class="carousel-item"
-                    src="assets/img_lab_counter3.png"
-                    style="width: 100%"
-                  />
-                  <button class="prev" onclick="plusSlides(-1, 2)">❮</button>
-                  <button class="next" onclick="plusSlides(1, 2)">❯</button>
-                </div>
-                <div class="container">
-                  <h4><b>Contador Interactivo / Interactive Counter</b></h4>
-                  <p>
-                    Creé un contador que incrementa o decrementa según el botón
-                    presionado, con cambio de color al llegar a 10, demostrando
-                    manejo de estados y dinamismo en la interfaz.
-                  </p>
-                  <p>
-                    I built a counter that increments or decrements based on the
-                    button clicked, changing color when it reaches 10,
-                    showcasing state management and dynamic UI.
-                  </p>
-                  <div id="repo">
-                    <div class="repo-section">
-                      <a
-                        href="https://github.com/Leisy17/LabContador"
-                        target="_blank"
-                        class="fa fa-github fa-lg"
-                        style="background-color: #000"
-                      ></a>
-                    </div>
-                    <div class="skills-tags w80">
-                      <span class="tag">JavaScript</span>
-                      <span class="tag">HTML</span>
-                      <span class="tag">CSS</span>
-                      <span class="tag">UI/UX</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="carousel">
-                  <img
-                    class="carousel-item"
-                    src="assets/img_portfolio.png"
-                    style="width: 100%"
-                  />
-                  <img
-                    class="carousel-item"
-                    src="assets/img_portfolio2.png"
-                    style="width: 100%"
-                  />
-                  <button class="prev" onclick="plusSlides(-1, 3)">❮</button>
-                  <button class="next" onclick="plusSlides(1, 3)">❯</button>
-                </div>
-                <div class="container">
-                  <h4><b>Oficina de Leisy / Leisy's Office</b></h4>
-                  <p>
-                    Desarrollé un portafolio 3D donde presento mi información,
-                    CV y proyectos usando modelos GLB y animaciones
-                    interactivas, demostrando habilidades avanzadas en
-                    visualización web y UI/UX.
-                  </p>
-                  <p>
-                    I built an interactive 3D portfolio showcasing my info, CV,
-                    and projects using GLB models and interactive animations,
-                    demonstrating advanced web visualization and UI/UX skills.
-                  </p>
-                  <div id="repo">
-                    <div class="repo-section">
-                      <a
-                        href="https://github.com/Leisy17/portfolio"
-                        target="_blank"
-                        class="fa fa-github fa-lg"
-                        style="background-color: #000"
-                      ></a>
-                    </div>
-                    <div class="skills-tags w80">
-                      <span class="tag">Three.js</span>
-                      <span class="tag">JavaScript</span>
-                      <span class="tag">HTML</span>
-                      <span class="tag">CSS</span>
-                      <span class="tag">UI/UX</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="mb-3 mb-md-0">
+            <p
+              class="m-0 font-weight-light"
+              style="font-size: 0.8rem; color: #8c8c8c; letter-spacing: 0.02em"
+            >
+              &copy; 2026 Leisy Portfolio. All rights reserved.
+            </p>
           </div>
+
+          <div
+            class="d-flex align-items-center footer-links"
+            id="footer-links-container"
+          ></div>
         </div>
       </div>
-      <div id="contact">
-        <div class="contact">
-          <div class="camara brdRadius">
-            <div class="lado brdRadius order">
-              <div class="bio-section es">
-                <span class="lang-tag">ES</span>
-                <p>
-                  "En mi camino como dev, he aprendido a convertir retos en
-                  soluciones, con el objetivo de crear tecnología segura y
-                  eficiente."
-                </p>
-              </div>
-              <div class="divider"></div>
-              <div class="bio-section en">
-                <span class="lang-tag">EN</span>
-                <p>
-                  "In my journey as a developer, I have learned to turn
-                  challenges into solutions, aiming to build secure, efficient,
-                  and impactful technology."
-                </p>
-              </div>
-            </div>
-
-            <div class="centro">
-              <img src="assets/me.jpeg" alt="foto" />
-            </div>
-
-            <div class="lado brdRadius order">
-              <h4><b>Contáctame / Contact Me</b></h4>
-              <a
-                href="https://www.linkedin.com/in/leisy-sanchez"
-                target="_blank"
-                onclick="
-                  copyToClipboard('https://www.linkedin.com/in/leisy-sanchez')
-                "
-                class="fa fa-linkedin fa-lg"
-                style="background-color: #3b5998"
-              ></a>
-              <a
-                href="mailto:leisysado@gmail.com"
-                onclick="copyToClipboard('leisysado@gmail.com')"
-                class="fa fa-google fa-lg"
-                style="background-color: #983b3b"
-              ></a>
-              <a
-                href="https://github.com/Leisy17"
-                target="_blank"
-                onclick="copyToClipboard('https://github.com/Leisy17')"
-                class="fa fa-github fa-lg"
-                style="background-color: #000"
-              ></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="footer">
-        <div class="container-footer">
-          <div class="logo"></div>
-          <p class="letters-footer">© 2026</p>
-        </div>
-      </div>
-    </div>
-    <script type="importmap">
-      {
-        "imports": {
-          "three": "https://cdn.jsdelivr.net/npm/three@0.160/build/three.module.js",
-          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160/examples/jsm/"
-        }
-      }
-    </script>
-
-    <script type="module" src="app.js"></script>
+    </footer>
   </body>
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"
+  ></script>
+  <script src="app.js" type="module"></script>
 </html>
