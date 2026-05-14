@@ -128,8 +128,8 @@ function renderProjects(lang) {
                         
                         <div class="mt-auto pt-3">
                           <a href="${project.githubUrl}" target="_blank" 
-                            class="btn btn-outline-primary text-uppercase d-inline-flex align-items-center custom-btn-link">
-                              <span class="text-warning mr-2">${btnText}</span>
+                            class="btn text-uppercase d-inline-flex align-items-center custom-btn-link">
+                              <span class="mr-2">${btnText}</span>
                               <i class="bi bi-arrow-right text-warning"></i>
                           </a>
                         </div>
