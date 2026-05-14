@@ -231,7 +231,7 @@ nav {
 
 .custom-contact-card:hover {
   text-decoration: none !important;
-  transform: translateY(-3%);
+  transform: scale(1.05);
 }
 
 .blockquota {
