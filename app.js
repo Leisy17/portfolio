@@ -38,7 +38,7 @@ function renderSkills() {
     .map(
       (skill) => `
         <div class="col-4 col-sm-3 col-md-2 p-1 d-flex justify-content-center">
-    <div class="card text-center shadow-sm border-0 w-100 py-2 custom-card-skill">
+    <div class="card text-center shadow-sm border-1 w-100 py-2 custom-card-skill">
         <div class="card-body d-flex flex-column align-items-center justify-content-center p-1">
             <i class="${skill.icon} text-warning mb-1" style="font-size: 1.8rem; -webkit-text-stroke: 0.03em;"></i>
             <h5 class="card-title m-0">
