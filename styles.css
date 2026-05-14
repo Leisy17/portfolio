@@ -222,7 +222,16 @@ nav {
 
 .custom-btn-link:hover {
   opacity: 0.8;
-  text-decoration: none;
+  text-decoration: none !important;
+}
+
+.custom-contact-card {
+  transition: transform 0.3s ease;
+}
+
+.custom-contact-card:hover {
+  text-decoration: none !important;
+  transform: translateY(-3%);
 }
 
 .blockquota {
