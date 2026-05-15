@@ -306,6 +306,8 @@ function renderTextByLang(lang) {
   quota.innerText = data.default[lang]["quota"];
   let connect = document.getElementById("connect");
   connect.innerText = data.default[lang]["connect"];
+  let footer = document.getElementById("footerMsg");
+  footer.innerText = data.default[lang]["footer"];
   renderContactLinks(lang);
   renderFooterLinks();
 }

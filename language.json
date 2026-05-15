@@ -12,7 +12,8 @@
       { "text": "Skills", "href": "#skills" },
       { "text": "Projects", "href": "#projects" },
       { "text": "Contact", "href": "#contact" }
-    ]
+    ],
+    "footer": "© 2026 Leisy Portfolio. All rights reserved."
   },
   "es": {
     "brand": "PORTAFOLIO",
@@ -27,6 +28,7 @@
       { "text": "Habilidades", "href": "#skills" },
       { "text": "Proyectos", "href": "#projects" },
       { "text": "Contacto", "href": "#contact" }
-    ]
+    ],
+    "footer": "© 2026 Leisy Portafolio. Todos los derechos reservados."
   }
 }
