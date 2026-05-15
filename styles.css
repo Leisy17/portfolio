@@ -2,13 +2,28 @@
   --primary: #6a5c47;
   --primary-opacity: rgba(106, 92, 71, 0.3);
   --primary-text: #ffffff;
-  --secondary-text: #4A473E;
+  --secondary-text: #6c757d;
   --background: rgba(241,241,240,0.9);
   --accent: #b68b5e;
-  --white: #ffffff;
+  --bg-light: #ffffff;
   --border-subtle: rgba(203, 198, 186, 0.3);
   --warm-bg: rgba(244, 235, 208, 0.3);
   --quote-bg: rgba(244, 235, 208, 30);
+}
+
+.dark {
+  --background: rgba(21, 19, 17, 0.9);
+  --primary: #D7C4AA;
+  --primary-opacity: rgba(215, 196, 170, 0.8);
+  --secondary-text: #D7C4AA;
+  --accent: #CFC5BA;
+  --warm-bg: #3d3d3d;
+  --quote-bg: #1D1B19;
+  --bg-light: #36332F;
+}
+
+.text-secondary {
+  color: var(--secondary-text) !important;
 }
 
 html {
@@ -18,12 +33,29 @@ html {
 
 body {
   font-size: 0.95rem;
+  background-color: var(--background);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 
 nav {
   border-bottom: 1px solid var(--primary-opacity);
-  background-color: var(--white) !important;
+  background-color: var(--bg-light) !important;
+}
+
+.navbar-toggler {
+  border: 1px solid var(--primary) !important;
+  border-radius: 6px;
+}
+
+.navbar-toggler-icon {
+  background-image: none !important;
+}
+
+.navbar-toggler::before {
+  content: "☰";
+  font-size: 1.2rem;
+  color: var(--primary);
 }
 
 .nav-item {
@@ -72,6 +104,12 @@ nav {
   transform: scaleX(1);
 }
 
+.navbar-toggler {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 .btn {
   font-size: 0.75rem;
   font-weight: 300;
@@ -92,7 +130,10 @@ nav {
 
 .lang {
   padding: 0.1rem !important;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
+}
+.card {
+  background-color: var(--bg-light) !important;
 }
 
 .card-title,
@@ -133,6 +174,9 @@ nav {
 .btn-outline-warning.active {
   background-color: transparent !important;
   color: var(--primary) !important;
+}
+
+.nav-item.active {
   transform: translateY(-2%);
 }
 
@@ -183,8 +227,12 @@ nav {
 }
 
 #resume {
-  color: var(--secondary-text);
+  color: var(--secondary-text) !important;
   line-height: 2.5em !important;
+}
+
+#skills {
+  background-color: var(--bg-light) !important;
 }
 
 .custom-card-skill {
@@ -196,7 +244,7 @@ nav {
 .custom-card-skill:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05) !important;
-  background-color: var(--white);
+  background-color: var(--bg-light);
 }
 
 .custom-card-skill .bi {
@@ -276,7 +324,7 @@ nav {
 }
 
 .contact {
-  background-color: var(--white);
+  background-color: var(--bg-light);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -290,6 +338,36 @@ nav {
 
 #quota {
   width: 35%;
+}
+
+.btn-theme-toggle {                                                               
+  position: fixed;                                                                
+  bottom: 2rem;
+  right: 2rem;
+  width: 2.8rem;                                                                  
+  height: 2.8rem;                                                                 
+  border-radius: 50%;                                                             
+  border: 1px solid var(--primary-opacity);                                       
+  background-color: var(--bg-light);                                                 
+  color: var(--primary);                                                          
+  font-size: 1rem;                                                                
+  display: flex;                                                                  
+  align-items: center;                                                            
+  justify-content: center;                                                        
+  cursor: pointer;                                                                
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);                                      
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.3s ease;       
+  z-index: 1050;                                                                  
+}                                                                                 
+                                                                                  
+.btn-theme-toggle:hover {                                                         
+  transform: scale(1.1);                                                          
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);                                     
+}                                                                                 
+                                                                                  
+.btn-theme-toggle.hidden {                                                        
+  opacity: 0;                                                                     
+  pointer-events: none;                                                           
 }
 
 .custom-footer-link {
@@ -308,6 +386,7 @@ nav {
 
 .footer {
   border-top: 1px solid var(--primary-opacity);
+  background-color: var(--bg-light) !important;
 }
 
 @media (max-width: 767.98px) {

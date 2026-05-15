@@ -381,9 +381,30 @@ function initNavigation() {
   );
 }
 
+function applyTheme(isDark) {
+  const icon = document.querySelector("#theme-toggle i");
+  if (icon) icon.className = isDark ? "bi bi-sun" : "bi bi-moon-stars";
+  const logoSrc = isDark ? "assets/signature_960x640_dark.png" : "assets/signature_960x640.png";
+  document.querySelectorAll(".logo-img").forEach(img => img.src = logoSrc);
+}
+
+function toggleTheme() {
+  const isDark = document.body.classList.toggle("dark");
+  localStorage.setItem("theme", isDark ? "dark" : "");
+  applyTheme(isDark);
+}
+
 window.toggleBtn = toggleBtn;
 window.viewPDF = viewPDF;
+window.toggleTheme = toggleTheme;
+
 document.addEventListener("DOMContentLoaded", () => {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+    applyTheme(true);
+  }
+
   renderSkills();
   initNavigation();
   const savedLang = localStorage.getItem("lang") || "en";
@@ -397,4 +418,17 @@ document.addEventListener("DOMContentLoaded", () => {
     activeBtn.classList.add("active");
   }
   renderTextByLang(savedLang);
+});
+
+window.addEventListener("scroll", () => {
+  const footer = document.getElementById("footer");
+  const button = document.getElementById("theme-toggle");
+
+  const rect = footer.getBoundingClientRect();
+
+  if (rect.top < window.innerHeight) {
+    button.style.display = "none";
+  } else {
+    button.style.display = "block";
+  }
 });
