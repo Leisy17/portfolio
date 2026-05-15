@@ -107,14 +107,14 @@ function renderProjects(lang) {
 
       return `
             <div class="col-12 col-sm-6 col-md-4 p-2 d-flex justify-content-center">
-                <div class="card border-1 custom-card-project bg-white w-100">
+                <div class="card border-1 custom-card-project w-100">
                     
                     <div class="project-img-container d-flex justify-content-center align-items-center">
                         <img src="${project.image}" class="img-fluid rounded-sm" alt="${project.title}">
                     </div>
                     
                     <div class="card-body px-3 py-3 d-flex flex-column">
-                        <h4 class="project-title text-warning mb-1 font-weight-normal">
+                        <h4 class="project-title text-warning font-weight-normal">
                             ${project.title.toUpperCase()}
                         </h4>
                         
@@ -143,7 +143,28 @@ function renderProjects(lang) {
   container.innerHTML = projectsHTML;
 }
 
+function viewPDF(lang) {
+  const file =
+    lang === "es"
+      ? "assets/CV - Leisy Sánchez - es.pdf"
+      : "assets/Resume - Leisy Sánchez - en.pdf";
+
+  window.open(file, "_blank");
+}
+
 const contactLinks = [
+  {
+    id: "cv",
+    label: {
+      es: "DESCARGAR CV",
+      en: "DOWNLOAD CV",
+    },
+    value: {
+      es: "Hoja de vida / Portafolio",
+      en: "Resume / Portfolio",
+    },
+    icon: "bi-file-earmark-arrow-down",
+  },
   {
     id: "email",
     label: "EMAIL",
@@ -167,15 +188,54 @@ const contactLinks = [
   },
 ];
 
-function renderContactLinks() {
+function renderContactLinks(lang) {
   const container = document.getElementById("contact-container");
   if (!container) return;
 
   const contactHTML = contactLinks
     .map((link) => {
+      if (link.id === "cv") {
+        return `
+        <a
+          href=""
+          onclick="event.preventDefault(); viewPDF('${lang}');"
+          class="d-flex align-items-center justify-content-between px-5 p-3 mb-3 w-100 custom-cv-card"
+          id="content-to-print"
+        >
+          
+          <div class="d-flex align-items-center w-100">
+
+            <div class="mr-3 text-muted">
+              <i class="bi ${link.icon}"></i>
+            </div>
+
+            <div class="d-flex flex-column text-start">
+
+              <span class="text-secondary custom-label">
+                ${
+                  typeof link.label === "object" ? link.label[lang] : link.label
+                }
+              </span>
+
+              <span id="link-value" class="text-warning font-weight-light">
+                ${
+                  typeof link.value === "object" ? link.value[lang] : link.value
+                }
+              </span>
+
+            </div>
+          </div>
+
+          <div class="text-warning custom-arrow-icon">
+            <i class="bi bi-arrow-up-right"></i>
+          </div>
+
+        </a>
+      `;
+      }
       return `
             <a href="${link.url}" target="${link.id === "email" ? "_self" : "_blank"}" rel="noopener noreferrer" 
-               class="d-flex align-items-center justify-content-between px-5 p-3 mb-3 bg-white w-100 custom-contact-card">
+               class="d-flex align-items-center justify-content-between px-5 p-3 mb-3 w-100 custom-contact-card">
                 
                 <div class="d-flex align-items-center w-100">
                     <div class="mr-3 text-muted">
@@ -183,7 +243,7 @@ function renderContactLinks() {
                     </div>
                     
                     <div class="d-flex flex-column text-start">
-                        <span class="text-muted text-uppercase mb-1">
+                        <span class="text-secondary custom-label">
                             ${link.label}
                         </span>
                         <span id="link-value" class="text-warning font-weight-light">
@@ -209,6 +269,9 @@ function renderFooterLinks() {
 
   const footerHTML = contactLinks
     .map((link, index) => {
+      if(link.id == 'cv') {
+        return;
+      }
       const marginClass = index === contactLinks.length - 1 ? "ml-3" : "mx-3";
 
       const formattedLabel =
@@ -243,7 +306,7 @@ function renderTextByLang(lang) {
   quota.innerText = data.default[lang]["quota"];
   let connect = document.getElementById("connect");
   connect.innerText = data.default[lang]["connect"];
-  renderContactLinks();
+  renderContactLinks(lang);
   renderFooterLinks();
 }
 
@@ -319,6 +382,7 @@ function initNavigation() {
 }
 
 window.toggleBtn = toggleBtn;
+window.viewPDF = viewPDF;
 document.addEventListener("DOMContentLoaded", () => {
   renderSkills();
   initNavigation();

@@ -237,6 +237,7 @@ nav {
 
 .custom-contact-card {
   transition: transform 0.3s ease;
+  border: rgba(203, 198, 186, 0.3) 1px solid !important;
 }
 
 .custom-contact-card:hover {
@@ -244,8 +245,34 @@ nav {
   transform: scale(1.05);
 }
 
+.custom-cv-card {
+  border: 1px solid var(--primary) !important;
+  transition: transform 0.3s ease;
+  background-color: rgba(244, 235, 208, 0.3);
+}
+
+.custom-cv-card:hover {
+  transform: scale(1.05);
+  text-decoration: none !important;
+}
+
+.custom-label {
+  font-size: 0.72rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  opacity: 0.65;
+}
+
 .blockquota {
   background-color: rgba(244, 235, 208, 30);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact {
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -273,6 +300,10 @@ nav {
 .custom-footer-link:hover {
   color: var(--primary-opacity) !important;
   text-decoration: none;
+}
+
+.footer {
+  border-top: 1px solid var(--primary-opacity);
 }
 
 @media (max-width: 767.98px) {
