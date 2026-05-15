@@ -5,6 +5,10 @@
   --secondary-text: #4A473E;
   --background: rgba(241,241,240,0.9);
   --accent: #b68b5e;
+  --white: #ffffff;
+  --border-subtle: rgba(203, 198, 186, 0.3);
+  --warm-bg: rgba(244, 235, 208, 0.3);
+  --quote-bg: rgba(244, 235, 208, 30);
 }
 
 html {
@@ -19,7 +23,7 @@ body {
 
 nav {
   border-bottom: 1px solid var(--primary-opacity);
-  background-color: #ffffff !important;
+  background-color: var(--white) !important;
 }
 
 .nav-item {
@@ -192,7 +196,7 @@ nav {
 .custom-card-skill:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05) !important;
-  background-color: #ffffff;
+  background-color: var(--white);
 }
 
 .custom-card-skill .bi {
@@ -237,7 +241,7 @@ nav {
 
 .custom-contact-card {
   transition: transform 0.3s ease;
-  border: rgba(203, 198, 186, 0.3) 1px solid !important;
+  border: var(--border-subtle) 1px solid !important;
 }
 
 .custom-contact-card:hover {
@@ -248,7 +252,7 @@ nav {
 .custom-cv-card {
   border: 1px solid var(--primary) !important;
   transition: transform 0.3s ease;
-  background-color: rgba(244, 235, 208, 0.3);
+  background-color: var(--warm-bg);
 }
 
 .custom-cv-card:hover {
@@ -264,7 +268,7 @@ nav {
 }
 
 .blockquota {
-  background-color: rgba(244, 235, 208, 30);
+  background-color: var(--quote-bg);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -272,7 +276,7 @@ nav {
 }
 
 .contact {
-  background-color: #ffffff;
+  background-color: var(--white);
   display: flex;
   flex-direction: column;
   justify-content: center;
