@@ -7,8 +7,7 @@ function renderNavbar(lang) {
   const navItems = data.default[lang]["nav"];
 
   const navHTML = navItems
-    .map((item, index) => {
-      const activeClass = index === 0 ? "active" : "";
+    .map((item) => {
       return `
             <li class="nav-item">
                 <a class="nav-link" href="${item.href}">${item.text}</a>
@@ -76,13 +75,13 @@ const projects = [
     },
   },
   {
-    title: "Bike Parts Pro",
-    tags: ["JS", "HTML", "CSS", "JAVA", "POSTGRESQL"],
-    image: "assets/img_bike_parts_pro1.png",
-    githubUrl: "https://github.com/AcStarPlayer/Proyecto-Bike_Parts_Pro",
+    title: "Simple HC",
+    tags: ["TS", "REACT", "Tailwind", "Storybook", "Jest", "Bash", "Nx"],
+    image: "assets/img_simplehc1.png",
+    githubUrl: "https://github.com/arca7-tech/simplehc-license-admin",
     description: {
-      en: "An interactive e-commerce platform for premium bicycle parts, featuring dynamic stock management and a secure, optimized checkout flow.",
-      es: "Una plataforma interactiva de comercio electrónico para partes de bicicletas premium, con gestión dinámica de inventario y un flujo de pago seguro y optimizado.",
+      en: "An interactive web platform for commercializing a medical software, featuring tier-based license plans, dynamic subscription management, and an optimized, secure user onboarding flow.",
+      es: "Una plataforma web interactiva para la comercialización de un software médico, con planes de licenciamiento por niveles, gestión dinámica de suscripciones y un flujo de registro de usuarios seguro y optimizado."
     },
   },
 ];
@@ -110,7 +109,7 @@ function renderProjects(lang) {
                 <div class="card border-1 custom-card-project w-100">
                     
                     <div class="project-img-container d-flex justify-content-center align-items-center">
-                        <img src="${project.image}" class="img-fluid rounded-sm" alt="${project.title}">
+                      <img src="${project.image}" class="img-fluid rounded-sm custom-project-img" alt="${project.title}">
                     </div>
                     
                     <div class="card-body px-3 py-3 d-flex flex-column">

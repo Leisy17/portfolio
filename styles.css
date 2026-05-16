@@ -144,6 +144,14 @@ nav {
   font-size: 0.65rem !important;
 }
 
+.custom-project-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover; 
+    object-position: top;
+}
+
 #link-value {
   display: block;
 }
